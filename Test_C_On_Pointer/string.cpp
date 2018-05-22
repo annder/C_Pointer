@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
+
+
 char str_chr(char *string,char char_find) {
 	char *temp = string;
 	while (*string++ == char_find)
@@ -65,3 +68,37 @@ void count_persent_string(char *string) {
 	printf("upper:%f \n", upper_case / sumlen);
 	printf("lowwer:%f \n", lowwer_case / sumlen);
 }
+
+int my_lenght(char *string) {
+	//if string_ is '\0' or not end of.
+	char *temp;
+	int index = 0;
+	strcpy(string, temp);
+	while (*string++ != '\0')
+	{
+		index++;
+	}
+	my_lenght(string);
+	return index;
+};
+
+const char *my_strcpy(char *string,const char *source) {
+	char *temp = string;
+	int string_size = sizeof(string);
+	int source_size = sizeof(source);
+	if (string_size > source_size) {
+		source = new char[string_size];
+	};
+	const char *source_temp = source;
+	while ((*string++ = *source++) != '\0');
+	return source_temp;
+};
+
+
+char *my_strcat(char *str1,const char *str2) {
+	char *pster = str1;
+	while (pster++ != '\0');
+	--pster;
+	while (*pster++ = *str2++ != '\0');
+	return str1;
+};
