@@ -102,3 +102,74 @@ char *my_strcat(char *str1,const char *str2) {
 	while (*pster++ = *str2++ != '\0');
 	return str1;
 };
+
+
+char *my_strncat(char *string,const char *cat,int n) {
+	int cat_size =  sizeof(cat);
+	int index = 0;
+	if (n > cat_size) {
+		printf("%s", "请输入一个有效的长度");
+	}
+	else {
+	   char *temp_string = string;
+		while (*string++ != '\0');
+		++string;
+		while (index++ < n) {
+			*string++ = *cat++;
+		};
+		return temp_string;
+	};
+};
+
+char *str_cpy_str(char *str,char *src) {
+	const char *temp = str;
+	while ((*str++ = *src++) != '\0');
+	char *end_src = src--;
+	// char *end_src = src + strlen(str) - 1;
+	return end_src;
+};
+
+// Bug
+char *my_str_chr(char *str,int value) {
+	int str_len = strlen (str);
+	char const *temp = str;
+	/*
+		0 -> strlen(value) -1
+		1 -> strlen(value) - (value - 1)	
+	*/
+	int loop_number = strlen(temp) - value + 1;
+	int index = 0;
+	char *result;
+	while (index++ != loop_number){
+		result =  str++;
+	};
+	return result;
+};
+
+
+// which ---> 
+char *my_str_n_chr(char *str, int ch, int which) {
+	if (which == 1){ 
+		return my_str_chr(str, ch);
+	}
+	int str_len = strlen(str);
+	char const *temp = str;
+	int loop_number = strlen(temp) - ch + 1;
+	int index = 0;
+	char *result;
+	for (index; index > strlen(str); index++) {
+		str++;
+		if (index == ch) {
+ 			result = my_str_n_chr(str, ch, which);
+		};
+	};
+	return result;
+};
+
+// In the first function rearching chars char symbols
+
+// and match included about str arguments, Then return counts.
+
+int count_chars(char const *str,char const *chars) {
+
+}

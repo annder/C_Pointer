@@ -4,7 +4,7 @@ Created a instance.
 
 &---&
 
-```c
+```diff
     char *my_strcat(char *str,const char *src){
         char *temp = str;
 +        while(*temp++);
