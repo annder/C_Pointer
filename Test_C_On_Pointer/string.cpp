@@ -171,5 +171,48 @@ char *my_str_n_chr(char *str, int ch, int which) {
 // and match included about str arguments, Then return counts.
 
 int count_chars(char const *str,char const *chars) {
-
+	char const  *temp = str;
+	int index = 0;
+	while (*str++ != '\0') {
+		if (str == chars) {
+			index++;
+		}
+	}
+	return index;
 }
+
+int palindrome(char *string) {
+	int lenght = strlen(string);
+	int index_string = 0;
+	char *temp = string;
+	if (lenght % 2 == 0) {
+		return 0;
+	};
+	int mid_char_position = int()(lenght / 2);
+	int string_sub = lenght - 1;
+	int result = 0;
+	for (index_string, lenght; index_string > mid_char_position, string_sub < mid_char_position; index_string++,string_sub--) {
+		if (*(string + index_string) == *(string + string_sub)) {
+			result++;
+		};
+	};
+	return result == mid_char_position ? 1 : 0;
+};
+
+void scan_words(char *string) {
+	int lenght_string = strlen(string);
+	if (lenght_string > 100){
+		printf("The string lenght over  100 chars.\n");
+		printf("rewrite your entry value!");
+	};
+	char *getString;
+	scanf("%s", getString);
+	char *T_String = getString;
+	char *compare_String = "the";
+	int control_string_len = 0;
+	while (*getString++ != '\0', control_string_len  < lenght_string) {
+		if (control_string_len % 3 == 0 ){
+			
+		}
+	};
+};
