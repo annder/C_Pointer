@@ -191,7 +191,7 @@ int palindrome(char *string) {
 	int mid_char_position = int()(lenght / 2);
 	int string_sub = lenght - 1;
 	int result = 0;
-	for (index_string, lenght; index_string > mid_char_position, string_sub < mid_char_position; index_string++,string_sub--) {
+	for (index_string; index_string > mid_char_position; index_string++, string_sub--) {
 		if (*(string + index_string) == *(string + string_sub)) {
 			result++;
 		};
@@ -199,20 +199,39 @@ int palindrome(char *string) {
 	return result == mid_char_position ? 1 : 0;
 };
 
-void scan_words(char *string) {
-	int lenght_string = strlen(string);
-	if (lenght_string > 100){
-		printf("The string lenght over  100 chars.\n");
-		printf("rewrite your entry value!");
+char *cursh_string(char *str) {
+	char *temp = str;
+	while (*str++ != '\0') {
+		if (str == " ") {
+			continue;
+		};
 	};
-	char *getString;
-	scanf("%s", getString);
-	char *T_String = getString;
-	char *compare_String = "the";
-	int control_string_len = 0;
-	while (*getString++ != '\0', control_string_len  < lenght_string) {
-		if (control_string_len % 3 == 0 ){
-			
-		}
-	};
+	return temp;
 };
+
+int scan_words(char *string) {
+	int index = -1;
+	char *temp = string;
+	char *curshed_string = cursh_string(string);
+	int len = strlen(curshed_string);
+	int flag = 0;
+	while (*string++ != '\0') {
+		if (*(string - 1) == 't' && *string == 'h' && *(string + 1) == 'e') {
+			flag++;
+		}
+	}
+	return flag;
+};
+
+typedef  struct {
+	int prepare_key(char *key) {
+	
+	};
+	void encrypt(char *data,char const *key) {
+
+	};
+	void decrypt(char *data, char const *key) {
+	
+	};
+
+} Encipher ;
