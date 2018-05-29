@@ -223,9 +223,25 @@ int scan_words(char *string) {
 	return flag;
 };
 
+/*
+	填充成二十四个字母，而且是不占位的那种
+	再通过二十四个字母进行比对，最后输出结果
+*/
+
 typedef  struct {
 	int prepare_key(char *key) {
-	
+		if (key == " " || key == NULL){
+			return 0;
+		}
+		else {
+			char *temp = key;
+			while (*key++ != '\0'){
+				char()(toupper(int()(key)));
+			}
+			char *Topper;
+			strcpy(temp, Topper);
+		
+		};
 	};
 	void encrypt(char *data,char const *key) {
 
