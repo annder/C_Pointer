@@ -1,29 +1,41 @@
 #include <stdio.h>
-#include <string.h>
+#include <stddef.h>
+#define MAX 1
 
-char  message[17] = "Original message";
-char *other = "A differenet message";
 
-extern char str_chr(char *string, char char_find);
+typedef struct Reduce_memory {
+	int *pointer_other;
+	union Share_memory {
+		char *io;
+	} Share_memory;
+} Reduce_memory;
 
-struct A {
-	 int a = 2;
-	 int b = 2;
-} x = {1,2};
+typedef struct PARTINFO {
+	int coat;
+	int suppiler;
+} PARTIONFO;
 
-typedef  struct Mystruct {
-	
-	int cunt ;
-} MyStruct;
+typedef struct SUBASSYINFO {
+	int n_parts;
+	typedef struct {
+		char partno[10];
+		int quan;
+		enum { PART,SUBASSBY } type; 
+	} parts[MAX];
+} SUBASSYINFO;
+
+typedef struct INVREC {
+	char parton[10];
+	int quan;
+ 	typedef union {
+		PARTINFO part;
+		SUBASSYINFO subassy;
+	} info;
+} INVREC;
 
 int main() {
-	MyStruct ft = { 1 };
-	MyStruct *q = &ft;
-	printf	("%d\n",x.a);
-	struct  A c;
-	printf("%d\n", c.a);
-	char *op = "HELLO";
-	char getValue = str_chr(op, 'H');
-	printf("%c\n", getValue);
-	printf("%s\n", message);
-}
+	Reduce_memory Fun;
+	char *yet =  Fun.Share_memory.io = "Drink_coffer";
+	printf("%s", yet);
+};
+
