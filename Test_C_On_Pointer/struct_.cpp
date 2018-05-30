@@ -1,5 +1,6 @@
 #include <stddef.h>
 #include <stdio.h>
+#define MAX 1
 
 typedef struct P{
 	int a = 1;
@@ -45,3 +46,54 @@ typedef struct Reduce_memory {
 
 Reduce_memory Fun;
 char *yet = Fun.Share_memory.io = "Drink_coffer";
+
+
+
+typedef struct PARTINFO {
+	int coat;
+	int suppiler;
+} PARTIONFO;
+
+typedef struct SUBASSYINFO {
+	int n_parts;
+	typedef struct {
+		char partno[10];
+		int quan;
+		enum { PART, SUBASSBY } type;
+	} parts[MAX];
+} SUBASSYINFO;
+
+typedef struct INVREC {
+	char parton[10];
+	int quan;
+	typedef union {
+		PARTINFO part;
+		SUBASSYINFO subassy;
+	} info;
+} INVREC;
+
+union func {
+	int a;
+} x = {1};
+
+struct x {
+	int a;
+	char b[10];
+	float c;
+} xf = {
+	1,
+	"hello",
+	0
+};
+
+//Think
+
+struct CREACT {
+	int a;
+	float b;
+} qf[2] = { { 2,12 },{ 2,3 } };
+
+struct {
+	int  a : 2;
+} unFill = {1};
+// Opreate follow:a += 1;
