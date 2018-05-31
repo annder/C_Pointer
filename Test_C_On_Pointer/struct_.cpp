@@ -1,5 +1,9 @@
 #include <stddef.h>
 #include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <string.h>
+
 #define MAX 1
 
 typedef struct P{
@@ -97,3 +101,58 @@ struct {
 	int  a : 2;
 } unFill = {1};
 // Opreate follow:a += 1;
+
+int  component_phone_number(char *arg, char *arg1, char *arg2) {
+	char *compoent_2_number = strcat(arg, arg1);
+	return atoi(strcat(compoent_2_number, arg2));
+};
+
+struct long_phone {
+	struct Phone {
+		char *column_number;
+		char *change_number;
+		char *staion_number;
+	};
+	struct Phone *number;
+	int Usage_number = component_phone_number(number->change_number, number->column_number, number->staion_number);
+	int Called_number = component_phone_number(number->change_number, number->column_number, number->staion_number);
+	int Pay_number = component_phone_number(number->change_number, number->column_number, number->staion_number);
+};
+
+//--->
+
+struct System_Info {
+	struct Costomer {
+		char name[30];
+		char address[40];
+		char model[20];
+	};
+	struct Sales {
+		float manufacture_suggested_retail_price;
+		float actual_selling_price;
+		float sales_tax;
+		float licensing_fee;
+		struct Rental {
+			float manufacture_suggested_retial_price;
+			float actual_selling_price;
+			float down_payment;
+			float security_depoist;
+			float monthly_payment;
+			int lease_term;
+		} Rental;
+	};
+	struct Loan {
+		float manufacture_suggested_retail_price;
+		float actual_selling_price;
+		float sales_tax;
+		float licensing_fee;
+		int loan_duation;
+		float interest_rate;
+		float monthly_payment;
+		char name_of_bank;
+	};
+	struct Rental *Rental;
+	struct Sales *Sales;
+	struct Loan *loan;
+	struct Costomer *Constomer;
+};
