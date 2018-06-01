@@ -1,18 +1,13 @@
 #include <stdio.h>
 #include <stddef.h>
+#include <stdlib.h>
 
-
-
-union  {
-	int a;
-	char b;
-	float c;
-} sharp;
+extern void *alloc(size_t size);
 
 int main() {	
-	sharp.a = 1;
-	sharp.b = 'x';
-	sharp.c = 2;
-	printf("a:%d , b:%c, c:%f\n", sharp.a, sharp.b, sharp.c);
+	int *p;
+	p = (int*)alloc(100);
+	free(p);
+	char *v = (char *)alloc(25 * sizeof(int));
+	free(v);
 };
-
