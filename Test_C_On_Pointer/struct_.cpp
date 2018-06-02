@@ -156,3 +156,4 @@ struct System_Info {
 	struct Loan *loan;
 	struct Costomer *Constomer;
 };
+

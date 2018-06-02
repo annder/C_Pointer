@@ -139,10 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="array_opreat.cpp" />
     <ClCompile Include="array_pointer.cpp" />
     <ClCompile Include="char_find.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="menory.cpp" />
+    <ClCompile Include="sort.cpp" />
     <ClCompile Include="string.cpp" />
     <ClCompile Include="struct_.cpp" />
   </ItemGroup>

@@ -12,3 +12,9 @@ void *alloc(size_t size){
 	 return new_mem;
 };
 
+int compare_integers(void const *a, void const *b) {
+	register int const *pa = (int*)a;
+	register int const *pb = (int*)a; 
+	return *pa > *pb ? 1 : *pa < *pb ? -1 : 0;
+
+};
