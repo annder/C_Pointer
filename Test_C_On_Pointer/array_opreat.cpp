@@ -1,24 +1,37 @@
 #include <stdlib.h>
 
-int array_lenght(int const array_[]) {
+int array_lenght(int const array_[])
+{
 	return sizeof(array_) / sizeof(int);
 };
 
-void pop_array(int array_[]) {
+void pop_array(int array_[])
+{
 	int length = array_lenght(array_);
 	array_ = (int *)malloc(sizeof(array_) - sizeof(int));
 };
 
-void push_array(int array_[], int element) {
+void push_array(int array_[], int element)
+{
 	int lenght = array_lenght(array_);
 	int array_meony_size = sizeof(array_);
 	int number_size = sizeof(element);
-	array_ =  (int*)malloc(array_meony_size  + array_meony_size);
+	array_ = (int *)malloc(array_meony_size + array_meony_size);
 	int i = 0;
-	while (i++ < lenght + 1);
+	while (i++ < lenght + 1)
+		;
 	array_[i] = element;
 };
 
-void cat_array(int array_[],int other_array[]) {
-
+int *cat_array(int array_[], int other_array[])
+{
+	int length = array_lenght(array_);
+	int long_lenght = array_lenght(other_array) + length;
+	int index = 0;
+	array_ = (int *)malloc(sizeof(array_) + sizeof(other_array));
+	for (index = 0, length; length < long_lenght; length++, index++)
+	{
+		array_[length] = other_array[index];
+	};
+	return array_;
 };

@@ -3,8 +3,8 @@
 #include <ctype.h>
 #include <stdlib.h>
 
-
-char str_chr(char *string,char char_find) {
+char str_chr(char *string, char char_find)
+{
 	char *temp = string;
 	while (*string++ == char_find)
 	{
@@ -13,11 +13,15 @@ char str_chr(char *string,char char_find) {
 	return '0';
 }
 
-char *strpbrk_(char const *str,char const *group) {
+char *strpbrk_(char const *str, char const *group)
+{
 	const char *string = str, *group_ = group;
-	for (string; *str != '\0'; *str++) {
-		for (group_; *group != '\0'; *group++) {
-			if (*string == * group_) {
+	for (string; *str != '\0'; *str++)
+	{
+		for (group_; *group != '\0'; *group++)
+		{
+			if (*string == *group_)
+			{
 				return (char *)string;
 			}
 		}
@@ -25,15 +29,17 @@ char *strpbrk_(char const *str,char const *group) {
 	return nullptr;
 };
 
-
-//Unconfirm 
-const char *my_strrstr(char const *stringA,char const *stringB ) {
+//Unconfirm
+const char *my_strrstr(char const *stringA, char const *stringB)
+{
 	register const char *last;
-	register const char *current; 
+	register const char *current;
 	last = nullptr;
-	if (*stringB != '\0') {
+	if (*stringB != '\0')
+	{
 		current = strstr(stringA, stringB);
-		while (current != NULL) {
+		while (current != NULL)
+		{
 			last = current;
 			current = strstr(last + 1, stringB);
 		};
@@ -41,19 +47,20 @@ const char *my_strrstr(char const *stringA,char const *stringB ) {
 	return last;
 };
 
-
-void count_persent_string(char *string) {
-	char *val,*temp;
+void count_persent_string(char *string)
+{
+	char *val, *temp;
 	scanf("%s", &val);
-	strcpy(val,temp);
+	strcpy(val, temp);
 	int upper_case = 0,
 		lowwer_case = 0,
 		whithe_case = 0,
 		symbol_case = 0,
 		number_case = 0;
-	while (*val++ != '\0' ) {
+	while (*val++ != '\0')
+	{
 		int force_transform = (int)val;
-		if (isupper(force_transform)) 
+		if (isupper(force_transform))
 			upper_case++;
 		if (islower(force_transform))
 			lowwer_case++;
@@ -63,13 +70,14 @@ void count_persent_string(char *string) {
 			whithe_case++;
 	};
 	int sumlen = strlen(temp);
-	printf("blank: %f \n",  whithe_case/ sumlen);
+	printf("blank: %f \n", whithe_case / sumlen);
 	printf("number: %f \n", number_case / sumlen);
 	printf("upper:%f \n", upper_case / sumlen);
 	printf("lowwer:%f \n", lowwer_case / sumlen);
 }
 
-int my_lenght(char *string) {
+int my_lenght(char *string)
+{
 	//if string_ is '\0' or not end of.
 	char *temp;
 	int index = 0;
@@ -82,56 +90,68 @@ int my_lenght(char *string) {
 	return index;
 };
 
-const char *my_strcpy(char *string,const char *source) {
+const char *my_strcpy(char *string, const char *source)
+{
 	char *temp = string;
 	int string_size = sizeof(string);
 	int source_size = sizeof(source);
-	if (string_size > source_size) {
+	if (string_size > source_size)
+	{
 		source = new char[string_size];
 	};
 	const char *source_temp = source;
-	while ((*string++ = *source++) != '\0');
+	while ((*string++ = *source++) != '\0')
+		;
 	return source_temp;
 };
 
-
-char *my_strcat(char *str1,const char *str2) {
+char *my_strcat(char *str1, const char *str2)
+{
 	char *pster = str1;
-	while (pster++ != '\0');
+	while (pster++ != '\0')
+		;
 	--pster;
-	while (*pster++ = *str2++ != '\0');
+	while (*pster++ = *str2++ != '\0')
+		;
 	return str1;
 };
 
-
-char *my_strncat(char *string,const char *cat,int n) {
-	int cat_size =  sizeof(cat);
+char *my_strncat(char *string, const char *cat, int n)
+{
+	int cat_size = sizeof(cat);
 	int index = 0;
-	if (n > cat_size) {
-		printf("%s", "ÇëÊäÈëÒ»¸öÓÐÐ§µÄ³¤¶È");
+	if (n > cat_size)
+	{
+		printf("%s", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ð§ï¿½Ä³ï¿½ï¿½ï¿½");
 	}
-	else {
-	   char *temp_string = string;
-		while (*string++ != '\0');
+	else
+	{
+		char *temp_string = string;
+		while (*string++ != '\0')
+			;
 		++string;
-		while (index++ < n) {
+		while (index++ < n)
+		{
 			*string++ = *cat++;
 		};
 		return temp_string;
 	};
 };
 
-char *str_cpy_str(char *str,char *src) {
+char *str_cpy_str(char *str, char *src)
+{
 	const char *temp = str;
-	while ((*str++ = *src++) != '\0');
+	while ((*str++ = *src++) != '\0')
+		;
 	char *end_src = src--;
 	// char *end_src = src + strlen(str) - 1;
 	return end_src;
 };
 
 // Bug
-char *my_str_chr(char *str,int value) {
-	int str_len = strlen (str);
+char *my_str_chr(char *str, int value)
+{
+	int str_len = strlen(str);
 	char const *temp = str;
 	/*
 		0 -> strlen(value) -1
@@ -140,16 +160,18 @@ char *my_str_chr(char *str,int value) {
 	int loop_number = strlen(temp) - value + 1;
 	int index = 0;
 	char *result;
-	while (index++ != loop_number){
-		result =  str++;
+	while (index++ != loop_number)
+	{
+		result = str++;
 	};
 	return result;
 };
 
-
-// which ---> 
-char *my_str_n_chr(char *str, int ch, int which) {
-	if (which == 1){ 
+// which --->
+char *my_str_n_chr(char *str, int ch, int which)
+{
+	if (which == 1)
+	{
 		return my_str_chr(str, ch);
 	}
 	int str_len = strlen(str);
@@ -157,10 +179,12 @@ char *my_str_n_chr(char *str, int ch, int which) {
 	int loop_number = strlen(temp) - ch + 1;
 	int index = 0;
 	char *result;
-	for (index; index > strlen(str); index++) {
+	for (index; index > strlen(str); index++)
+	{
 		str++;
-		if (index == ch) {
- 			result = my_str_n_chr(str, ch, which);
+		if (index == ch)
+		{
+			result = my_str_n_chr(str, ch, which);
 		};
 	};
 	return result;
@@ -170,53 +194,66 @@ char *my_str_n_chr(char *str, int ch, int which) {
 
 // and match included about str arguments, Then return counts.
 
-int count_chars(char const *str,char const *chars) {
-	char const  *temp = str;
+int count_chars(char const *str, char const *chars)
+{
+	char const *temp = str;
 	int index = 0;
-	while (*str++ != '\0') {
-		if (str == chars) {
+	while (*str++ != '\0')
+	{
+		if (str == chars)
+		{
 			index++;
 		}
 	}
 	return index;
 }
 
-int palindrome(char *string) {
+int palindrome(char *string)
+{
 	int lenght = strlen(string);
 	int index_string = 0;
 	char *temp = string;
-	if (lenght % 2 == 0) {
+	if (lenght % 2 == 0)
+	{
 		return 0;
 	};
 	int mid_char_position = int()(lenght / 2);
 	int string_sub = lenght - 1;
 	int result = 0;
-	for (index_string; index_string > mid_char_position; index_string++, string_sub--) {
-		if (*(string + index_string) == *(string + string_sub)) {
+	for (index_string; index_string > mid_char_position; index_string++, string_sub--)
+	{
+		if (*(string + index_string) == *(string + string_sub))
+		{
 			result++;
 		};
 	};
 	return result == mid_char_position ? 1 : 0;
 };
 
-char *cursh_string(char *str) {
+char *cursh_string(char *str)
+{
 	char *temp = str;
-	while (*str++ != '\0') {
-		if (str == " ") {
+	while (*str++ != '\0')
+	{
+		if (str == " ")
+		{
 			continue;
 		};
 	};
 	return temp;
 };
 
-int scan_words(char *string) {
+int scan_words(char *string)
+{
 	int index = -1;
 	char *temp = string;
 	char *curshed_string = cursh_string(string);
 	int len = strlen(curshed_string);
 	int flag = 0;
-	while (*string++ != '\0') {
-		if (*(string - 1) == 't' && *string == 'h' && *(string + 1) == 'e') {
+	while (*string++ != '\0')
+	{
+		if (*(string - 1) == 't' && *string == 'h' && *(string + 1) == 'e')
+		{
 			flag++;
 		}
 	}
@@ -224,30 +261,34 @@ int scan_words(char *string) {
 };
 
 /*
-	Ìî³ä³É¶þÊ®ËÄ¸ö×ÖÄ¸£¬¶øÇÒÊÇ²»Õ¼Î»µÄÄÇÖÖ
-	ÔÙÍ¨¹ý¶þÊ®ËÄ¸ö×ÖÄ¸½øÐÐ±È¶Ô£¬×îºóÊä³ö½á¹û
+	ï¿½ï¿½ï¿½É¶ï¿½Ê®ï¿½Ä¸ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç²ï¿½Õ¼Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Ê®ï¿½Ä¸ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½Ð±È¶Ô£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 
-typedef  struct {
-	int prepare_key(char *key) {
-		if (key == " " || key == NULL){
+typedef struct
+{
+	int prepare_key(char *key)
+	{
+		if (key == " " || key == NULL)
+		{
 			return 0;
 		}
-		else {
+		else
+		{
 			char *temp = key;
-			while (*key++ != '\0'){
+			while (*key++ != '\0')
+			{
 				char()(toupper(int()(key)));
 			}
 			char *Topper;
 			strcpy(temp, Topper);
-		
 		};
 	};
-	void encrypt(char *data,char const *key) {
+	void encrypt(char *data, char const *key){
 
 	};
-	void decrypt(char *data, char const *key) {
-	
+	void decrypt(char *data, char const *key){
+
 	};
 
-} Encipher ;
+} Encipher;

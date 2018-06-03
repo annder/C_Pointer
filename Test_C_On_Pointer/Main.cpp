@@ -3,11 +3,11 @@
 #include <stdlib.h>
 
 extern void *alloc(size_t size);
+extern int compare_integers(void const *a, void const *b);
+extern int menory_main();
 
-int main() {	
-	int *p;
-	p = (int*)alloc(100);
-	free(p);
-	char *v = (char *)alloc(25 * sizeof(int));
-	free(v);
+int main()
+{
+	int a;
+	printf("%d", scanf("%d", &a));
 };
