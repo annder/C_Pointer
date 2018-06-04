@@ -8,6 +8,5 @@ extern int menory_main();
 
 int main()
 {
-	int a;
-	printf("%d", scanf("%d", &a));
+
 };

@@ -1,7 +1,2 @@
-﻿  menory.cpp
-f:\temp\c\test_c_on_pointer\test_c_on_pointer\menory.cpp(38): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1272): note: 参见“scanf”的声明
-f:\temp\c\test_c_on_pointer\test_c_on_pointer\menory.cpp(51): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1272): note: 参见“scanf”的声明
-  Test_C_On_Pointer.vcxproj -> F:\Temp\C\Test_C_On_Pointer\Debug\Test_C_On_Pointer.exe
+﻿  Test_C_On_Pointer.vcxproj -> F:\Temp\C\Test_C_On_Pointer\Debug\Test_C_On_Pointer.exe
   Test_C_On_Pointer.vcxproj -> F:\Temp\C\Test_C_On_Pointer\Debug\Test_C_On_Pointer.pdb (Partial PDB)
