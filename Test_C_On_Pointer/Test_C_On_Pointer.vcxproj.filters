@@ -39,5 +39,8 @@
     <ClCompile Include="array_opreat.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="memory_test.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

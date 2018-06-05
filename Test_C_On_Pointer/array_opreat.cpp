@@ -35,3 +35,15 @@ int *cat_array(int array_[], int other_array[])
 	};
 	return array_;
 };
+
+
+int *cpy_array(int arg[]) {
+	int len = sizeof(arg) / sizeof(int);
+	int index = 0;
+	int *result;
+	while (index++ < len)
+	{
+		*(arg+index)  = *(result +index) ;
+	};
+	return result;
+}

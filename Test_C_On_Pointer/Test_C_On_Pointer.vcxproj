@@ -143,6 +143,7 @@
     <ClCompile Include="array_pointer.cpp" />
     <ClCompile Include="char_find.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="memory_test.cpp" />
     <ClCompile Include="menory.cpp" />
     <ClCompile Include="sort.cpp" />
     <ClCompile Include="string.cpp" />
